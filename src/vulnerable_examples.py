@@ -47,3 +47,4 @@ def average_score(values: list[float]) -> float:
 
 def apply_percentage_discount(total: float, percentage: float) -> float:
     return total - percentage
+
