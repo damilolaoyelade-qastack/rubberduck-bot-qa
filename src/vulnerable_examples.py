@@ -14,8 +14,8 @@ def unsafe_user_lookup(
     connection: sqlite3.Connection,
     username: str,
 ):
-    query = f"SELECT id, email FROM users WHERE username = '{username}'"
-    return connection.execute(query).fetchall()
+    query = "SELECT id, email FROM users WHERE username = ?"
+    return connection.execute(query, (username,)).fetchall()
 
 
 def unsafe_shell_lookup(host: str) -> str:
